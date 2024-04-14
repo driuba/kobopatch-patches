@@ -175,3 +175,27 @@ Bulgarian Phonetic Keyboard (GloHD/ClaraHD/AuraOne/H2O2/Forma/Libra):
   - ReplaceString: {Offset: 0x8C, Find: "ç\0", Replace: "н"}
   - ReplaceString: {Offset: 0x90, Find: "đ\0", Replace: "м"}
   - ReplaceString: {Offset: 0x94, Find: "ł\0", Replace: "."}
+
+Lithuanian Keyboard (Libra 2):
+  # Updated by driuba for 4.38.21908
+  - Enabled: no
+  - PatchGroup: Keyboard alternatives
+  - Description: |
+      Replaces some of the keys on the Extended Latin keypad with Lithuanian alternatives. This is mainly intended to edit the popup tooltips.
+
+      Note that after the device boots, the keypad might just show blank squares
+      until after the first book has been opened.
+      Also note that long-pressing keys on the base keypad will no longer show
+      the appropriate list of Extended Latin keys.
+  # Change keyboard layout
+  - FindBaseAddressString: "¡\0\0¿\0\0«\0\0»\0\0"
+  - ReplaceString: {Offset: 0x4c, Find: "â\0", Replace: "ą\0"}
+  - ReplaceString: {Offset: 0x64, Find: "ê\0", Replace: "ę\0"}
+  - ReplaceString: {Offset: 0x68, Find: "ë\0", Replace: "ė\0"}
+  - ReplaceString: {Offset: 0x90, Find: "ï\0", Replace: "į\0"}
+  - ReplaceString: {Offset: 0xa0, Find: "ü\0", Replace: "ū\0"}
+  - ReplaceString: {Offset: 0xa8, Find: "ç\0", Replace: "č\0"}
+  - ReplaceString: {Offset: 0xb8, Find: "ą\0", Replace: "â\0"}
+  - ReplaceString: {Offset: 0xc4, Find: "ę\0", Replace: "ê\0"}
+  - ReplaceString: {Offset: 0xcc, Find: "ů\0", Replace: "ų\0"}
+
